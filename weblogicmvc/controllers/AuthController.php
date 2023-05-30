@@ -1,5 +1,5 @@
 <?php
-    include_once './models/auth.php';
+    include_once './models/Auth.php';
     require_once 'controllers/Controller.php';
 
     class AuthController extends Controller{

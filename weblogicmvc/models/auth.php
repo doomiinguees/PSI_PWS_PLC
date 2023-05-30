@@ -1,18 +1,19 @@
 <?php
+    require_once 'User.php';
     session_start();
+
 
     class Auth{
 
-        public function CheckAuth($user, $password) {
+        public function CheckAuth($username, $password) {
 
-            $valid_user = "admin";
-            $valid_password = "12345";
-
-            if ($user === $valid_user && $password === $valid_password) {
-                $_SESSION['user'] = $user;
-                return true;
+            $user = User::find_by_username_and_password($username, $password);
+            if ($user !== null) {
+                $_SESSION['username'] = $user->username;
+                $_SESSION['password'] = $user->password;
+                $_SESSION['role'] = $user->role;
             } else {
-                return false;
+
             }
         }
         public function IsLoggedIn() {
@@ -25,25 +26,17 @@
         public  function logout() {
             session_destroy();
         }
-    }
 
-   /* //CheckAuth
-    function CheckAuth($user, $password) {
+        public function getUsername(){
+            return $_SESSION['username'];
+        }
 
-        $valid_username = "admin";
-        $valid_password = "12345";
+        public function getPassword(){
+            return $_SESSION['password'];
+        }
 
-        if ($user === $valid_username && $password === $valid_password) {
-            $_SESSION['user'] = $user;
-            return true;
-        } else {
-            return false;
+        public function getRole(){
+            return $_SESSION['role'];
         }
     }
-
-
-
-    function Logout() {
-        session_destroy();
-    }*/
 ?>

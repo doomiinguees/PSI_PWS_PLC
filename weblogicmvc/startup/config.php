@@ -1,14 +1,15 @@
 <?php
-   /* require 'vendor/autoload.php';
+    require 'vendor/autoload.php';
 
-    define('APP_NAME', 'HDR Services');
-    define('INVALID_ACCESS_ROUTE', 'c=auth&a=index');*/
+    define('APP_NAME', 'Credit Application');
+    define('INVALID_ACCESS_ROUTE', 'c=auth&a=index');
 
-    ActiveRecord\Config::initialize(function($cfg) {
+    ActiveRecord\Config::initialize(function($cfg)
+    {
         $cfg->set_model_directory('./models');
         $cfg->set_connections(
             array(
-                'development' => 'mysql://root@localhost/appdb',
+                'development' => 'mysql://root@localhost/hdrservices',
             )
         );
     });

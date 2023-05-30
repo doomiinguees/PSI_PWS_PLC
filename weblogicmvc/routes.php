@@ -1,15 +1,15 @@
 <?php
     require_once 'controllers/AuthController.php';
+    require_once 'controllers/HomeController.php';
     return [
-        'defaultRoute' => ['GET', 'AuthController', 'index'],
+        'defaultRoute' => ['GET', 'HomeController', 'index'],
         'auth' => [
             'index' => ['GET', 'AuthController', 'index'],
             'login' => ['POST', 'AuthController', 'login'],
             'logout' => ['GET', 'AuthController', 'logout']
         ],
-        'book' => [
-            'index' => ['GET', 'BookController', 'index'],
-            'show' => ['GET', 'BookController', 'show']
+        'home' =>[
+            'index' => ['GET', 'HomeController', 'index']
         ]
     ];
 
