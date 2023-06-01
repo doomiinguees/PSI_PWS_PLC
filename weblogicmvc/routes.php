@@ -1,6 +1,7 @@
 <?php
     require_once 'controllers/AuthController.php';
     require_once 'controllers/HomeController.php';
+
     return [
         'defaultRoute' => ['GET', 'HomeController', 'index'],
         'auth' => [

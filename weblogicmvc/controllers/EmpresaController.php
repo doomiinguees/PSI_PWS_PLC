@@ -5,8 +5,12 @@ require_once 'models/Empresa.php';
 class EmpresaController
 {
     public function index(){
-        $empresa = Empresa::find();
-        $this->renderView('empresa','index', ['book'=>$book]);
+        /*$empresa = Empresa::find();
+        $this->renderView('empresa','index', ['empresa'=>$empresa]);*/
+    }
+
+    public function edit(){
+
     }
 
 }

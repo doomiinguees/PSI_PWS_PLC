@@ -2,7 +2,7 @@
 
 class User extends \ActiveRecord\Model
 {
-    static $validates_presence_of = array(
+    /*static $validates_presence_of = array(
         //validacao de dados
-    );
+    );*/
 }

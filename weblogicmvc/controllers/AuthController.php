@@ -9,6 +9,7 @@
 //        }
 
         public function index(){
+            var_dump("aqui");
             $this -> renderView('auth', 'index');
         }
 

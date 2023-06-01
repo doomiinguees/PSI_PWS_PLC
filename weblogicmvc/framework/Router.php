@@ -6,6 +6,7 @@
         public function route() {
             // Load the routes from the routes.php file
             $routes = require('routes.php');
+
             // Get the controller and action from the query string
             $controllerPrefix = $_GET['c'] ?? null;
             $action = $_GET['a'] ?? null;

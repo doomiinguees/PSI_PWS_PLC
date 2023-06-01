@@ -2,13 +2,13 @@
 <html>
 <head>
     <link href="../../public/css/adminlte.css" rel="stylesheet">
-    <title><?=teste?></title>
+    <title><?=APP_NAME?></title>
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
-    <!-- Font Awesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- overlayScrollbars -->
     <link rel="stylesheet" href="../../public/plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="../../public/plugins/fontawesome-free/css/all.min.css">
     <!-- Theme style -->
     <link rel="stylesheet" href="../../public/css/adminlte.min.css">
 </head>

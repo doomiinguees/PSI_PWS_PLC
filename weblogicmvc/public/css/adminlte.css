@@ -1,5 +1,4 @@
 
-
 :root {
   --blue: #007bff;
   --indigo: #6610f2;
@@ -2598,7 +2597,6 @@ fieldset:disabled a.btn {
 .btn-primary:not(:disabled):not(.disabled):active, .btn-primary:not(:disabled):not(.disabled).active,
 .show > .btn-primary.dropdown-toggle {
   color: #fff;
-  background-color: #0062cc;
   border-color: #005cbf;
 }
 
@@ -2864,7 +2862,6 @@ fieldset:disabled a.btn {
 .btn-dark:not(:disabled):not(.disabled):active, .btn-dark:not(:disabled):not(.disabled).active,
 .show > .btn-dark.dropdown-toggle {
   color: #fff;
-  background-color: #1d2124;
   border-color: #171a1d;
 }
 
@@ -4333,7 +4330,6 @@ input[type="button"].btn-block {
 .nav-tabs .nav-link.active,
 .nav-tabs .nav-item.show .nav-link {
   color: #495057;
-  background-color: #fff;
   border-color: #dee2e6 #dee2e6 #fff;
 }
 
