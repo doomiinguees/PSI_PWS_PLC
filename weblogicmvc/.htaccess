@@ -1,6 +1,0 @@
-options -indexes
-order deny,allow
-deny from all
-<Files "index.php">
-allow from all
-</Files>
