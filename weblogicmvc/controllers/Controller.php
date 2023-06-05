@@ -1,5 +1,7 @@
 <?php
 
+require_once './models/Auth.php';
+
 class Controller
 {
     protected function redirectToRoute($controllerPrefix, $action, $params = [])
@@ -16,6 +18,7 @@ class Controller
     protected function renderView($controllerPrefix, $viewName, $data = [], $layout = 'default')
     {
         extract($data);
+        $auth = new auth();
         $viewPath = 'views/' . $controllerPrefix . '/' . $viewName . '.php';
         $layoutPath = 'views/layout/' . $layout . '.php';
         require_once($layoutPath);

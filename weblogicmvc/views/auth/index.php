@@ -14,44 +14,44 @@
     <link rel="stylesheet" href="../../public/css/adminlte.min.css">
 </head>
 <body class="hold-transition login-page">
-<div class="login-box">
-    <!-- /.login-logo -->
-    <div class="card">
-        <div class="card-body login-card-body">
+    <div class="login-box">
+        <!-- /.login-logo -->
+        <div class="card">
+            <div class="card-body login-card-body">
 
-            <div class="login-logo" style="float: left;">
-                <img src="../../public/img/logo-no-background.png" width="60px" height="60px">
+                <div class="login-logo" style="float: left;">
+                    <img src="public/img/logo-no-background.png" width="60px" height="60px">
+                </div>
+
+                <form action="index.php?c=auth&a=login" method="post">
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" name="user" placeholder="Usernane">
+                        <div class="input-group-append">
+                            <div class="input-group-text">
+                                <span class="fas fa-user"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="input-group mb-3">
+                        <input type="password" class="form-control" name="password" placeholder="Password">
+                        <div class="input-group-append">
+                            <div class="input-group-text">
+                                <span class="fas fa-lock"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.col -->
+                    <div class="col-4" style="float: right;">
+                        <button type="submit" class="btn btn-primary btn-block" >Iniciar Sessão</button>
+                    </div>
+                    <!-- /.col -->
             </div>
-
-            <form action="index.php?c=auth&a=login" method="post">
-                <div class="input-group mb-3">
-                    <input type="text" class="form-control" placeholder="Usernane">
-                    <div class="input-group-append">
-                        <div class="input-group-text">
-                            <span class="fas fa-user"></span>
-                        </div>
-                    </div>
-                </div>
-                <div class="input-group mb-3">
-                    <input type="password" class="form-control" placeholder="Password">
-                    <div class="input-group-append">
-                        <div class="input-group-text">
-                            <span class="fas fa-lock"></span>
-                        </div>
-                    </div>
-                </div>
-                <!-- /.col -->
-                <div class="col-4" style="float: right;">
-                    <button type="submit" class="btn btn-primary btn-block" >Iniciar Sessão</button>
-                </div>
-                <!-- /.col -->
+            </form>
         </div>
-        </form>
+        <!-- /.login-card-body -->
     </div>
-    <!-- /.login-card-body -->
-</div>
-</div>
-<!-- /.login-box -->
+    </div>
+    <!-- /.login-box -->
 
 <!-- jQuery -->
 <script src="../../public/plugins/jquery/jquery.min.js"></script>

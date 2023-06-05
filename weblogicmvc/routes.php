@@ -4,7 +4,7 @@
     require_once 'controllers/EmpresaController.php';
 
     return [
-        'defaultRoute' => ['GET', 'HomeController', 'index'],
+        'defaultRoute' => ['GET', 'AuthController', 'index'],
         'auth' => [
             'index' => ['GET', 'AuthController', 'index'],
             'login' => ['POST', 'AuthController', 'login'],

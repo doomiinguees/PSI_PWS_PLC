@@ -3,24 +3,35 @@
     require_once 'controllers/Controller.php';
 
     class AuthController extends Controller{
-//
-//        public function __construct(){
-//            session_start();
-//        }
+/*
+        public function __construct(){
+            session_start();
+        }*/
 
-        public function index(){
-            var_dump("aqui");
-            $this -> renderView('auth', 'index');
+        public function index()
+        {
+            $auth = new Auth();
+
+            if(!$auth->isLoggedIn())
+            {
+                if ($auth->getRole() == 1 || $auth->getRole() == 2){
+                    $this->renderView('auth', 'index', [''], 'boffice');2
+                }
+            }
+            else
+            {
+                $this->redirectToRoute('home', 'index');
+            }
         }
 
         public function login(){
             $user = $_POST['user'];
-            $password = $_POST['pass'];
+            $password = "password";
 
             $auth = new Auth();
 
             if ($auth -> CheckAuth($user, $password) == true) {
-                header("Location: index.php?c=plano&a=index");
+                header("Location: index.php?c=home&a=index");
             } else {
                 require_once './views/auth/index.php';
             }

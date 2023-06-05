@@ -10,7 +10,6 @@
     <!-- Small boxes (Stat box) -->
     <div class="row">
         fasdfazds<br>hrfgegsb d
-        $empresa
     </div>
 </section>
 <!--

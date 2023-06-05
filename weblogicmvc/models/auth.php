@@ -9,8 +9,8 @@
 
             $user = User::find_by_username_and_password($username, $password);
             if ($user !== null) {
+                $_SESSION['id'] = $user->id;
                 $_SESSION['username'] = $user->username;
-                $_SESSION['password'] = $user->password;
                 $_SESSION['role'] = $user->role;
             } else {
 
