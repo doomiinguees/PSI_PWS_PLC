@@ -1,9 +1,14 @@
 <?php
     require_once 'User.php';
-    session_start();
-
 
     class Auth{
+
+        public function __construct()
+        {
+            if (!isset($_SESSION)){
+                session_start();
+            }
+        }
 
         public function CheckAuth($username, $password) {
 
@@ -12,8 +17,9 @@
                 $_SESSION['id'] = $user->id;
                 $_SESSION['username'] = $user->username;
                 $_SESSION['role'] = $user->role;
+                return true;
             } else {
-
+                return null;
             }
         }
         public function IsLoggedIn() {
@@ -25,6 +31,13 @@
         }
         public  function logout() {
             session_destroy();
+        }
+
+        public function isLoggedinAs($roles=[]){
+            if (isLoggedIn()){
+                $role = $this.$this->getRole();
+
+            }
         }
 
         public function getUsername(){

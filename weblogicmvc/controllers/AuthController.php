@@ -3,10 +3,10 @@
     require_once 'controllers/Controller.php';
 
     class AuthController extends Controller{
-/*
+
         public function __construct(){
             session_start();
-        }*/
+        }
 
         public function index()
         {
@@ -14,9 +14,7 @@
 
             if(!$auth->isLoggedIn())
             {
-                if ($auth->getRole() == 1 || $auth->getRole() == 2){
-                    $this->renderView('auth', 'index', [''], 'boffice');2
-                }
+                $this->renderView('auth', 'index', [], 'login');
             }
             else
             {
@@ -26,12 +24,21 @@
 
         public function login(){
             $user = $_POST['user'];
-            $password = "password";
+            $password = $_POST['password'];
 
             $auth = new Auth();
 
-            if ($auth -> CheckAuth($user, $password) == true) {
-                header("Location: index.php?c=home&a=index");
+            if ($auth->CheckAuth($user, $password)) {
+                $auth = new Auth();
+
+                if(!$auth->isLoggedIn())
+                {
+                    if (!$auth->getRole() == 3){
+                        $this->renderView('auth', 'index', [], 'login');
+                    }else{
+                        $this->renderView('auth', 'index', [], 'login');
+                    }
+                }
             } else {
                 require_once './views/auth/index.php';
             }

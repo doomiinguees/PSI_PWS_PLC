@@ -2,56 +2,19 @@
     require_once '././startup/config.php';
 ?>
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="public/css/adminlte.css" rel="stylesheet">
     <title><?=APP_NAME?></title>
-
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="../../public/plugins/fontawesome-free/css/all.min.css">
-    <!-- icheck bootstrap -->
-    <link rel="stylesheet" href="../../public/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+    <!-- overlayScrollbars -->
+    <link rel="stylesheet" href="public/plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="public/plugins/fontawesome-free/css/all.min.css">
     <!-- Theme style -->
-    <link rel="stylesheet" href="../../public/css/adminlte.min.css">
+    <link rel="stylesheet" href="public/css/adminlte.min.css">
 </head>
 <body class="hold-transition login-page">
-<div class="login-box">
-    <!-- /.login-logo -->
-    <div class="card">
-        <div class="card-body login-card-body">
-
-            <div class="login-logo" style="float: left;">
-                <img src="public/img/logo-no-background.png" width="60px" height="60px">
-            </div>
-
-            <form action="index.php?c=auth&a=login" method="post">
-                <div class="input-group mb-3">
-                    <input type="text" class="form-control" name="user" placeholder="Usernane">
-                    <div class="input-group-append">
-                        <div class="input-group-text">
-                            <span class="fas fa-user"></span>
-                        </div>
-                    </div>
-                </div>
-                <div class="input-group mb-3">
-                    <input type="password" class="form-control" name="password" placeholder="Password">
-                    <div class="input-group-append">
-                        <div class="input-group-text">
-                            <span class="fas fa-lock"></span>
-                        </div>
-                    </div>
-                </div>
-                <!-- /.col -->
-                <div class="col-4" style="float: right;">
-                    <button type="submit" class="btn btn-primary btn-block" >Iniciar Sessão</button>
-                </div>
-                <!-- /.col -->
-        </div>
-        </form>
-    </div>
-    <!-- /.login-card-body -->
-</div>
+    <?php require_once($viewPath); ?>
 </div>
 <!-- /.login-box -->
 

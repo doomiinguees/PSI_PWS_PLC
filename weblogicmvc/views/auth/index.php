@@ -3,6 +3,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>HD Services | Log in</title>
+    <link rel="icon" type="image/x-icon" href="../../public/img/mlogo.png">
 
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -19,8 +20,8 @@
         <div class="card">
             <div class="card-body login-card-body">
 
-                <div class="login-logo" style="float: left;">
-                    <img src="public/img/logo-no-background.png" width="60px" height="60px">
+                <div class="login-logo" style="align-content: center;">
+                    <img src="public/img/logo-black.png" width="210px" height="65px">
                 </div>
 
                 <form action="index.php?c=auth&a=login" method="post">

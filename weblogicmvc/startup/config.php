@@ -2,7 +2,7 @@
     require './vendor/autoload.php';
 
     define('APP_NAME', 'HD Services');
-    define('INVALID_ACCESS_ROUTE', 'c=auth&a=index');
+ //   define('INVALID_ACCESS_ROUTE', 'c=auth&a=index');
 
     ActiveRecord\Config::initialize(function($cfg)
     {

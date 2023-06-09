@@ -6,8 +6,7 @@ class Controller
 {
     protected function redirectToRoute($controllerPrefix, $action, $params = [])
     {
-        $url = 'index.php?c=' . urlencode($controllerPrefix) . '&a=' .
-            urlencode($action);
+        $url = 'index.php?c=' . urlencode($controllerPrefix) . '&a=' . urlencode($action);
         foreach ($params as $key => $value) {
             $url .= '&' . urlencode($key) . '=' . urlencode($value);
         }
@@ -28,6 +27,14 @@ class Controller
         $auth = new Auth();
 
         if(!$auth->IsLoggedIn()){
+            header('index.php?'.INVALID_ACCESS_ROUTE);
+        }
+    }
+
+    protected function authorizationFilter($roles){
+        $auth = new Auth();
+
+        if(!$auth->IsLoggedIn($roles)){
             header('index.php?'.INVALID_ACCESS_ROUTE);
         }
     }

@@ -4,6 +4,11 @@ require_once 'Controller.php';
 require_once 'models/Empresa.php';
 class EmpresaController extends Controller
 {
+    public function __construct()
+    {
+        $this->authorizationFilter(['1', '2']);
+    }
+
     public function index(){
         $empresa = Empresa::find();
         $this->renderView('empresa','index', ['empresa'=>$empresa]);
@@ -21,7 +26,7 @@ class EmpresaController extends Controller
 
     public function update($id){
         $empresa = Empresa::find($id);
-        $empresa ->update_attrbutes($this->grtHTTPPost());
+        $empresa ->update_attrbutes($this->getHTTPPost());
 
         if ($empresa->is_valid()) {
             $empresa->save();
