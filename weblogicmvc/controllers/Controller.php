@@ -14,7 +14,7 @@ class Controller
         header('Location: ' . $url);
     }
 
-    protected function renderView($controllerPrefix, $viewName, $data = [], $layout = 'default')
+    protected function renderView($controllerPrefix, $viewName, $data = [], $layout = 'boffice')
     {
         extract($data);
         $auth = new auth();

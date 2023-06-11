@@ -1,4 +1,4 @@
-                <h1 class="m-0">Editar Cliente</h1>
+                <h1 class="m-0">Editar Funcionário</h1>
             </div><!-- /.col -->
         </div><!-- /.row -->
     </div><!-- /.container-fluid -->

@@ -15,14 +15,11 @@
 </head>
 <body class="hold-transition login-page">
     <?php require_once($viewPath); ?>
-</div>
-<!-- /.login-box -->
-
 <!-- jQuery -->
-<script src="../../public/plugins/jquery/jquery.min.js"></script>
+<script src="public/plugins/jquery/jquery.min.js"></script>
 <!-- Bootstrap 4 -->
-<script src="../../public/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="public/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 <!-- AdminLTE App -->
-<script src="../../public/js/adminlte.min.js"></script>
+<script src="public/js/adminlte.min.js"></script>
 </body>
 </html>

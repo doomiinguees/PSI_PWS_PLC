@@ -41,16 +41,11 @@
                         <a href="#" class="nav-link">
                             <p>Folhas de Obra</p>
                         </a>
-                    </li>q
-                    <li class="nav-item">
-                        <a href="#" class="nav-link">
-                            <p>Serviços</p>
-                        </a>
                     </li>
                     <li class="nav-item">
                         <a href="#" class="nav-link">
                             <p>
-                                <?=auth->getUsername();?>
+                                <?= $auth->getUsername();?>
                                 <i class="right fas fa-angle-left"></i>
                             </p>
                         </a>

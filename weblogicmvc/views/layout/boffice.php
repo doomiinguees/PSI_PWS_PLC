@@ -18,7 +18,7 @@
         <aside class="main-sidebar sidebar-dark-primary elevation-4">
             <!-- Brand Logo -->
             <a href="index.php?c=home&a=index" class="brand-link">
-                <img src="public/img/logo_main.png" alt="HD Services" class="brand-image img-circle elevation-3" style="opacity: .8" height="60" width="60">
+                <img src="public/img/mlogo.png" alt="HD Services" class="brand-image img-circle elevation-3" style="opacity: .8" height="60" width="60">
                 <span class="brand-text font-weight-light">HD Services</span>
             </a>
 
@@ -43,22 +43,22 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link">
+                        <a href="index.php?c=cliente&a=index" class="nav-link">
                         <p>Clientes</p>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link">
+                        <a href="index.php?c=servico&a=index" class="nav-link">
                         <p>Serviços</p>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link">
+                        <a href="index.php?c=iva&a=index" class="nav-link">
                         <p>IVA</p>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link">
+                        <a href="index.php?c=funcionario&a=index" class="nav-link">
                         <p>Funcionários</p>
                         </a>
                     </li>
@@ -76,7 +76,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="index2.html" class="nav-link">
+                            <a href="index.php?c=auth&a=logout" class="nav-link">
                             <p>Log Out</p>
                             </a>
                         </li>

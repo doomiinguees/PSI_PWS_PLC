@@ -26,14 +26,15 @@
                                 <td><?=$iva->valor?></td>
                                 <td><?=$iva->descricao?></td>
                                 <td>
-                                    <a href="index.php?c=cliente&a=edit&id=<?=$iva->id?>" class="btn btn-info" role="button">Editar</a>
-                                    <a href="index.php?c=cliente&a=delete&id=<?=$iva->id?>" class="btn btn-info" role="button">Eliminar</a>
+                                    <a href="index.php?c=iva&a=edit&id=<?=$iva->id?>" class="btn btn-info" role="button">Editar</a>
+                                    <a href="index.php?c=iva&a=delete&id=<?=$iva->id?>" class="btn btn-info" role="button">Eliminar</a>
                                     <!-- Repor password?-->
                                 </td>
                             </tr>
+                            <?php } ?>
                             </tbody>
                         </table>
-                        <a href="index.php?c=cliente&a=create" class="btn btn-info" role="button">Criar Cliente</a>
+                        <a href="index.php?c=iva&a=create" class="btn btn-info" role="button">Criar IVA</a>
                     </div>
                 </div>
             </div>

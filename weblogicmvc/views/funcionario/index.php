@@ -1,4 +1,4 @@
-                <h1 class="m-0">Clientes</h1>
+                <h1 class="m-0">Funcionário</h1>
             </div><!-- /.col -->
         </div><!-- /.row -->
     </div><!-- /.container-fluid -->
@@ -28,8 +28,8 @@
                                     <td><?=$user->nif?></td>
                                     <td><?=$user->morada.'<br>'.$user->localidade.'<br>'.$user->codpostal?></td>
                                     <td>
-                                        <a href="index.php?c=cliente&a=show&id=<?=$user->id?>" class="btn btn-info" role="button">Ver detalhes</a>
-                                        <a href="index.php?c=cliente&a=edit&id=<?=$user->id?>" class="btn btn-info" role="button">Editar</a>
+                                        <a href="index.php?c=funcionario&a=show&id=<?=$user->id?>" class="btn btn-info" role="button">Ver detalhes</a>
+                                        <a href="index.php?c=funcionario&a=edit&id=<?=$user->id?>" class="btn btn-info" role="button">Editar</a>
                                         <!-- Repor password?-->
                                     </td>
                                 </tr>
@@ -37,10 +37,11 @@
                             </tbody>
                         </table>
                         <br>
-                        <a href="index.php?c=cliente&a=create" class="btn btn-info" role="button">Criar Cliente</a>
+                        <a href="index.php?c=funcionario&a=create" class="btn btn-info" role="button">Criar Funcionário</a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </section>
+

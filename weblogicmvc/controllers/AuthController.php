@@ -23,20 +23,20 @@
         }
 
         public function login(){
-            $user = $_POST['user'];
+            $username = $_POST['username'];
             $password = $_POST['password'];
 
             $auth = new Auth();
 
-            if ($auth->CheckAuth($user, $password)) {
+            if ($auth->CheckAuth($username, $password)) {
                 $auth = new Auth();
 
                 if(!$auth->isLoggedIn())
                 {
-                    if (!$auth->getRole() == 3){
-                        $this->renderView('auth', 'index', [], 'login');
+                    if ($auth->getRole() == 3){
+                        $this->renderView('home', 'index', [], 'foffice');
                     }else{
-                        $this->renderView('auth', 'index', [], 'login');
+                        $this->renderView('home', 'index', [], 'boffice');
                     }
                 }
             } else {
@@ -47,7 +47,6 @@
         public function logout(){
             $auth = new Auth();
             $auth -> logout();
-            require_once './views/auth/index.php';
         }
     }
 

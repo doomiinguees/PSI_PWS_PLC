@@ -4,6 +4,7 @@
     require_once 'controllers/EmpresaController.php';
     require_once 'controllers/ClienteController.php';
     require_once 'controllers/IvaController.php';
+    require_once 'controllers/FuncionarioController.php';
 
     return [
         'defaultRoute' => ['GET', 'AuthController', 'index'],
@@ -23,10 +24,18 @@
         'cliente' =>[
             'index' => ['GET', 'ClienteController', 'index'],
             'show' => ['GET', 'ClienteController', 'show'],
-            'create' => ['GET', 'ClienteController', 'update'],
+            'create' => ['GET', 'ClienteController', 'create'],
             'store' => ['POST', 'ClienteController', 'store'],
             'edit' => ['GET', 'ClienteController', 'edit'],
             'update' => ['POST', 'ClienteController', 'update']
+        ],
+        'funcionario' =>[
+            'index' => ['GET', 'FuncionarioController', 'index'],
+            'show' => ['GET', 'FuncionarioController', 'show'],
+            'create' => ['GET', 'FuncionarioController', 'create'],
+            'store' => ['POST', 'FuncionarioController', 'store'],
+            'edit' => ['GET', 'FuncionarioController', 'edit'],
+            'update' => ['POST', 'FuncionarioController', 'update']
         ],
         'iva' =>[
             'index' => ['GET', 'IvaController', 'index'],

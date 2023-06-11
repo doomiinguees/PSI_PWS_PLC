@@ -10,7 +10,7 @@ class IvaController extends Controller
     }
 
     public function index(){
-        $iva = Iva::find();
+        $iva = Iva::All();
         $this->renderView('iva', 'index', ['iva'=>$iva]);
     }
 

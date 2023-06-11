@@ -1,4 +1,4 @@
-                <h1 class="m-0">Criar Cliente</h1>
+                <h1 class="m-0">Criar Funcionário</h1>
             </div><!-- /.col -->
         </div><!-- /.row -->
     </div><!-- /.container-fluid -->
@@ -9,7 +9,7 @@
     <!-- left column -->
     <div class="col-md-12"> <!--Tamanho do card é aqui-->
         <div class="card-body">
-            <form method="post" action="index.php?c=cliente&a=store">
+            <form method="post" action="index.php?c=funcionario&a=store">
                 <label for="exampleInputEmail1">Nome</label>
                 <input type="text" class="form-control" name="nome" placeholder="Nome do cliente">
                 <br>
@@ -24,6 +24,12 @@
                 <br>
                 <label for="exampleInputEmail1">Telefone</label>
                 <input type="text" class="form-control" name="telefone" placeholder="Telefone">
+                <br>
+                <label for="exampleInputEmail1">Função</label>
+                <select class="form-control select2 select2-hidden-accessible" name="role">
+                    <option value="1">Administrador</option>
+                    <option value="2">Funcionário</option>
+                </select>
                 <br>
                 <label for="exampleInputEmail1">Morada</label>
                 <input type="text" class="form-control" name="morada" placeholder="Morada">

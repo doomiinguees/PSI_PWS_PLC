@@ -10,7 +10,7 @@ class EmpresaController extends Controller
     }
 
     public function index(){
-        $empresa = Empresa::find();
+        $empresa = Empresa::First();
         $this->renderView('empresa','index', ['empresa'=>$empresa]);
     }
 

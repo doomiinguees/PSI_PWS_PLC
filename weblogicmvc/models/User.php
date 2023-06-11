@@ -14,4 +14,11 @@ class User extends \ActiveRecord\Model
             )
         ));
     }
+
+    protected $fillable = [
+        'name',
+        'email',
+        'password',
+        'role',
+    ];
 }

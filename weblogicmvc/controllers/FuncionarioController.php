@@ -2,7 +2,7 @@
 include_once './models/User.php';
 require_once 'controllers/Controller.php';
 
-class ClienteController extends Controller
+class FuncionarioController extends Controller
 {
     public function __construct()
     {
@@ -11,7 +11,7 @@ class ClienteController extends Controller
 
     public function index(){
         $users = User::All();
-        $this->renderView('cliente', 'index', ['users'=>$users]);
+        $this->renderView('funcionario', 'index', ['users'=>$users]);
     }
 
     public function show($id){
@@ -19,22 +19,21 @@ class ClienteController extends Controller
         if (is_null($user)){
 
         } else {
-            $this->renderView('cliente', 'show', ['user'=>$user]);
+            $this->renderView('funcionario', 'show', ['user'=>$user]);
         }
     }
 
     public function create(){
-        $this->renderView('cliente', 'create');
+        $this->renderView('funcionario', 'create');
     }
 
     public function store(){
         $user = new User($this-> getHTTPPost());
-        $user->role = 3;
         if ($user->is_valid()){
             $user->save();
-            $this->redirectToRoute('cliente', 'index');
+            $this->redirectToRoute('funcionario', 'index');
         } else {
-            $this->renderView('cliente', 'create', ['user'=>$user]);
+            $this->renderView('funcionario', 'create', ['user'=>$user]);
         }
     }
 
@@ -43,7 +42,7 @@ class ClienteController extends Controller
         if(is_null($user)){
 
         } else {
-            $this->renderView('cliente', 'edit', ['user'=>$user]);
+            $this->renderView('funcionario', 'edit', ['user'=>$user]);
         }
     }
 
@@ -52,11 +51,10 @@ class ClienteController extends Controller
         $user->update_attributes($this->getHTTPPost());
         if($user->is_valid()){
             $user->save();
-            $this->redirectToRoute('cliente', 'index');
+            $this->redirectToRoute('funcionario', 'index');
         } else {
-            $this->renderView('cliente', 'edit', ['user'=>$user]);
+            $this->renderView('funcionario', 'edit', ['user'=>$user]);
         }
     }
 
-    //Função delete não faz sentido neste contexto
 }

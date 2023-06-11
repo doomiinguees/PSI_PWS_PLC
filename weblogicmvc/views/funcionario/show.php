@@ -1,4 +1,4 @@
-                <h1 class="m-0">Ver Detalhes do Cliente</h1>
+                <h1 class="m-0">Ver Detalhes do Funcionário</h1>
             </div><!-- /.col -->
         </div><!-- /.row -->
     </div><!-- /.container-fluid -->
@@ -29,6 +29,14 @@
                             <tr>
                                 <td>Telefone</td>
                                 <td><?=$user->telefone?></td>
+                            </tr>
+                            <tr>
+                                <td>Função</td>
+                                <td><?php if($user->role == 1){
+                                        echo("Administrador");
+                                    }else{
+                                        echo("Funcionário");
+                                    }?></td>
                             </tr>
                             <tr>
                                 <td>Número de Identificação Fiscal</td>
