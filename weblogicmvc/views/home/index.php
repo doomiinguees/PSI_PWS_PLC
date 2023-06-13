@@ -16,6 +16,7 @@
 
                         <div class="info-box-content">
                             <span class="info-box-text">Número de Serviços</span>
+
                             <span class="info-box-number">xxxx</span>
                         </div>
                     </div>
@@ -26,7 +27,7 @@
 
                         <div class="info-box-content">
                             <span class="info-box-text">Número de clientes</span>
-                            <span class="info-box-number">xxxx </span>
+                            <span class="info-box-number">xxxx<?php //echo $user;?> </span>
                         </div>
                     </div>
                 </div>
@@ -35,7 +36,7 @@
                         <span class="info-box-icon bg-info elevation-1"><i class="fas fa-money-bill-wave"></i></span>
 
                         <div class="info-box-content">
-                            <span class="info-box-text">Faturação dos últimos 24 dias</span>
+                            <span class="info-box-text">Número de funcionários</span>
                             <span class="info-box-number">xxxx </span>
                         </div>
                     </div>

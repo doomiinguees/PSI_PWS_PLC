@@ -51,5 +51,9 @@
         public function getRole(){
             return $_SESSION['role'];
         }
+
+        public function getId(){
+            return $_SESSION['id'];
+        }
     }
 ?>

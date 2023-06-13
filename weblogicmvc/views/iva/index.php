@@ -17,14 +17,18 @@
                             <tr>
                                 <th>Percentagem</th>
                                 <th>Descrição</th>
+                                <th>Estado</th>
                                 <th>Ações</th>
                             </tr>
                             </thead>
                             <tbody>
                             <?php foreach ($ivas as $iva){ ?>
                             <tr>
-                                <td><?=$iva->valor?></td>
+                                <td><?=$iva->valor?> %</td>
                                 <td><?=$iva->descricao?></td>
+                                <td>
+                                    <a href="index.php?c=iva&a=mudaestado&id=<?=$iva->id?>" class="btn btn-info" role="button"><?=$iva->estado?></a>
+                                </td>
                                 <td>
                                     <a href="index.php?c=iva&a=edit&id=<?=$iva->id?>" class="btn btn-info" role="button">Editar</a>
                                     <a href="index.php?c=iva&a=delete&id=<?=$iva->id?>" class="btn btn-info" role="button">Eliminar</a>
@@ -34,6 +38,7 @@
                             <?php } ?>
                             </tbody>
                         </table>
+                        <br>
                         <a href="index.php?c=iva&a=create" class="btn btn-info" role="button">Criar IVA</a>
                     </div>
                 </div>

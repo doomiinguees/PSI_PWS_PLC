@@ -1,6 +1,6 @@
 <?php
 
-require_once 'Controller.php';
+require_once 'controllers/Controller.php';
 require_once 'models/Iva.php';
 class IvaController extends Controller
 {
@@ -10,8 +10,8 @@ class IvaController extends Controller
     }
 
     public function index(){
-        $iva = Iva::All();
-        $this->renderView('iva', 'index', ['iva'=>$iva]);
+        $ivas = Iva::All();
+        $this->renderView('iva', 'index', ['ivas'=>$ivas], 'boffice');
     }
 
    /* public function show($id){
@@ -54,6 +54,21 @@ class IvaController extends Controller
             $this->redirectToRoute('iva', 'index');
         } else {
             $this->renderView('iva', 'edit', ['iva'=>$iva]);
+        }
+    }
+
+    public function mudaestado($id){
+        $iva = Iva::find($id);
+        if ($iva) {
+            $estadoAtual = $iva->estado;
+
+            if ($estadoAtual == 'Ativo') {
+                $iva->estado = 'Inativo';
+            } elseif ($estadoAtual == 'Inativo') {
+                $iva->estado = 'Ativo';
+            }
+            $iva->save();
+            $this->redirectToRoute('iva', 'index');
         }
     }
 

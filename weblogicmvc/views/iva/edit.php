@@ -14,6 +14,12 @@
                 <label for="exampleInputEmail1">Descrição</label>
                 <input type="text" class="form-control" name="descricao" placeholder="Descrição">
                 <br>
+                <label for="exampleInputEmail1">Estado</label>
+                <select class="form-control select2 select2-hidden-accessible" name="estado">
+                    <option value="Ativo">Ativo</option>
+                    <option value="Inativo">Inativo</option>
+                </select>
+                <br>
                 <button type="submit" style="float: right;" class="btn btn-primary">Criar Iva</button>
             </form>
         </div>

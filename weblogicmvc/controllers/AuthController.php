@@ -18,7 +18,12 @@
             }
             else
             {
-                $this->redirectToRoute('home', 'index');
+                $user = User::All(array('group' => 'role', 'role' => 'role = 3'));
+                if ($auth->getRole() == 3){
+                    $this->renderView('home', 'index');
+                }else{
+                    $this->renderView('home', 'index');
+                }
             }
         }
 
@@ -34,19 +39,21 @@
                 if(!$auth->isLoggedIn())
                 {
                     if ($auth->getRole() == 3){
-                        $this->renderView('home', 'index', [], 'foffice');
+                        $this->redirectToRoute('home', 'index');
                     }else{
-                        $this->renderView('home', 'index', [], 'boffice');
+                        $this->redirectToRoute('home', 'index');
                     }
                 }
             } else {
-                require_once './views/auth/index.php';
+                $this->renderView('auth', 'index', [], 'login');
             }
         }
 
         public function logout(){
             $auth = new Auth();
             $auth -> logout();
+            $this->redirectToRoute('auth', 'index');
+
         }
     }
 

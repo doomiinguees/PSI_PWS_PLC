@@ -38,7 +38,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link">
+                        <a href="index.php?c=folhaobra&a=index" class="nav-link">
                         <p>Folhas de Obra</p>
                         </a>
                     </li>
@@ -48,7 +48,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="index.php?c=servico&a=index" class="nav-link">
+                        <a href="index.php?c=service&a=index" class="nav-link">
                         <p>Serviços</p>
                         </a>
                     </li>
@@ -65,7 +65,7 @@
                     <li class="nav-item">
                         <a href="#" class="nav-link">
                         <p>
-                            Conta
+                            <?= $auth->getUsername();?>
                             <i class="right fas fa-angle-left"></i>
                         </p>
                         </a>

@@ -10,7 +10,7 @@ class FuncionarioController extends Controller
     }
 
     public function index(){
-        $users = User::All();
+        $users = User::find_all_by_role('1', '2');;
         $this->renderView('funcionario', 'index', ['users'=>$users]);
     }
 

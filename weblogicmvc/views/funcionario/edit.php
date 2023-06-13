@@ -10,9 +10,9 @@
     <div class="col-md-12"> <!--Tamanho do card é aqui-->
         <div class="card-body">
             <?php // var_dump($user);?>
-            <form method="post" action="index.php?c=clientea=update&id=<?= $user->id ?>">
+            <form method="post" action="index.php?c=cliente&a=update&id=<?= $user->id ?>">
                 <label for="exampleInputEmail1">Nome</label>
-                <input type="text" class="form-control" name="nome" value="<?php if(isset($user)) { echo $user->name; } ?>">
+                <input type="text" class="form-control" name="nome" value="<?php if(isset($user)) { echo $user->nome; } ?>">
                 <br>
                 <label for="exampleInputEmail1">Número de Identificação Fiscal</label>
                 <input type="text" class="form-control" name="nif" value="<?php if(isset($user)) { echo $user->nif; } ?>">

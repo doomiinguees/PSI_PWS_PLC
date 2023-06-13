@@ -5,6 +5,8 @@
     require_once 'controllers/ClienteController.php';
     require_once 'controllers/IvaController.php';
     require_once 'controllers/FuncionarioController.php';
+    require_once 'controllers/ServiceController.php';
+    require_once 'controllers/FolhaobraController.php';
 
     return [
         'defaultRoute' => ['GET', 'AuthController', 'index'],
@@ -39,11 +41,28 @@
         ],
         'iva' =>[
             'index' => ['GET', 'IvaController', 'index'],
-            'create' => ['GET', 'IvaController', 'update'],
+            'create' => ['GET', 'IvaController', 'create'],
             'store' => ['POST', 'IvaController', 'store'],
             'edit' => ['GET', 'IvaController', 'edit'],
             'update' => ['POST', 'IvaController', 'update'],
+            'mudaestado' => ['GET', 'IvaController', 'mudaestado'],
             'delete' => ['GET', 'IvaController', 'delete']
+        ],
+        'service' =>[
+            'index' => ['GET', 'ServiceController', 'index'],
+            'show' => ['GET', 'ServiceController', 'show'],
+            'create' => ['GET', 'ServiceController', 'create'],
+            'store' => ['POST', 'ServiceController', 'store'],
+            'edit' => ['GET', 'ServiceController', 'edit'],
+            'update' => ['POST', 'ServiceController', 'update']
+        ],
+        'folhaobra' =>[
+            'index' => ['GET', 'FolhaobraController', 'index'],
+            'show' => ['GET', 'FolhaobraController', 'show'],
+            'create' => ['GET', 'FolhaobraController', 'create'],
+            'store' => ['POST', 'FolhaobraController', 'store'],
+            'edit' => ['GET', 'FolhaobraController', 'edit'],
+            'update' => ['POST', 'FolhaobraController', 'update']
         ]
     ];
 

@@ -44,6 +44,15 @@
                         </tr>
                         </tbody>
                     </table>
+                    <br>
+                    <?php
+                        $auth = new Auth();
+                        if($auth->getRole() != 3){
+                    ?>
+                    <a href="index.php?c=empresa&a=edit" class="btn btn-info" role="button">Editar dados da empresa</a>
+                    <?php
+                    }
+                    ?>
                 </div>
             </div>
         </div>

@@ -10,7 +10,7 @@ class HomeController extends Controller
             if ($auth->getRole() == 3){
                 $this->renderView('home', 'index', [], 'foffice');
             }else{
-                $this->renderView('home', 'index', [], 'boffice');
+                $this->renderView('home', 'index',  [], 'boffice');
             }
         }
     }
