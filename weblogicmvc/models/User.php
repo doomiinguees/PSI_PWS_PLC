@@ -21,4 +21,8 @@ class User extends \ActiveRecord\Model
         'password',
         'role',
     ];
+
+    static $has_many  = array(
+        array('folhaobra')
+    );
 }

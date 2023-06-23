@@ -7,6 +7,7 @@
     require_once 'controllers/FuncionarioController.php';
     require_once 'controllers/ServiceController.php';
     require_once 'controllers/FolhaobraController.php';
+    require_once 'controllers/LinhaobraController.php';
 
     return [
         'defaultRoute' => ['GET', 'AuthController', 'index'],
@@ -29,7 +30,8 @@
             'create' => ['GET', 'ClienteController', 'create'],
             'store' => ['POST', 'ClienteController', 'store'],
             'edit' => ['GET', 'ClienteController', 'edit'],
-            'update' => ['POST', 'ClienteController', 'update']
+            'update' => ['POST', 'ClienteController', 'update'],
+            'reporpass' => ['GET', 'ClienteController', 'reporpass']
         ],
         'funcionario' =>[
             'index' => ['GET', 'FuncionarioController', 'index'],
@@ -60,9 +62,19 @@
             'index' => ['GET', 'FolhaobraController', 'index'],
             'show' => ['GET', 'FolhaobraController', 'show'],
             'create' => ['GET', 'FolhaobraController', 'create'],
-            'store' => ['POST', 'FolhaobraController', 'store'],
+            'store' => ['GET', 'FolhaobraController', 'store'],
             'edit' => ['GET', 'FolhaobraController', 'edit'],
-            'update' => ['POST', 'FolhaobraController', 'update']
+            'update' => ['POST', 'FolhaobraController', 'update'],
+            'scliente' => ['GET', 'FolhaobraController', 'scliente']
+        ],
+        'linhaobra' =>[
+            'index' => ['GET', 'LinhaobraController', 'index'],
+            'show' => ['GET', 'LinhaobraController', 'show'],
+            'create' => ['GET', 'LinhaobraController', 'create'],
+            'store' => ['POST', 'LinhaobraController', 'store'],
+            'edit' => ['GET', 'LinhaobraController', 'edit'],
+            'update' => ['POST', 'LinhaobraController', 'update'],
+            'scliente' => ['GET', 'LinhaobraController', 'scliente']
         ]
     ];
 

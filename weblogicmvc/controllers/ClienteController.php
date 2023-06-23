@@ -1,4 +1,5 @@
 <?php
+require './mail/mail.send.php';
 include_once './models/User.php';
 require_once 'controllers/Controller.php';
 
@@ -30,8 +31,12 @@ class ClienteController extends Controller
     public function store(){
         $user = new User($this-> getHTTPPost());
         $user->role = 3;
+
+        $user->password = $this->gerarpass();
+
         if ($user->is_valid()){
             $user->save();
+            sendPassword($user->email, $user->nome, $user->password);
             $this->redirectToRoute('cliente', 'index');
         } else {
             $this->renderView('cliente', 'create', ['user'=>$user]);
@@ -58,5 +63,11 @@ class ClienteController extends Controller
         }
     }
 
-    //Função delete não faz sentido neste contexto
+    public function reporpass($id){
+        $user = User::find($id);
+        $user->password = $this->gerarpass();
+        $user->save();
+        sendPassword($user->email, $user->nome, $user->password);
+        $this->redirectToRoute('cliente', 'index');
+    }
 }

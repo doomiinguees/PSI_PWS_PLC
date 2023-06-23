@@ -30,7 +30,7 @@
                                     <td>
                                         <a href="index.php?c=cliente&a=show&id=<?=$user->id?>" class="btn btn-info" role="button">Ver detalhes</a>
                                         <a href="index.php?c=cliente&a=edit&id=<?=$user->id?>" class="btn btn-info" role="button">Editar</a>
-                                        <!-- Repor password?-->
+                                        <a href="index.php?c=cliente&a=reporpass&id=<?=$user->id?>" class="btn btn-info" role="button">Repor palavra-passe</a>
                                     </td>
                                 </tr>
                             <?php }?>

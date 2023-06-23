@@ -9,10 +9,10 @@
         <div class="card-body">
             <form method="post" action="index.php?c=service&a=store">
                 <label for="exampleInputEmail1">Nome</label>
-                <input type="number" class="form-control" name="nome" placeholder="Nome">
+                <input type="text" class="form-control" name="nome" placeholder="Nome">
                 <br>
                 <label for="exampleInputEmail1">Referância</label>
-                <input type="number" class="form-control" name="referencia" placeholder="Referência">
+                <input type="text" class="form-control" name="referencia" placeholder="Referência">
                 <br>
                 <label for="exampleInputEmail1">Preço/Hora</label>
                 <input type="text" class="form-control" name="precohora" placeholder="Preço/Hora">
@@ -20,7 +20,7 @@
                 <label for="exampleInputEmail1">IVA</label>
                 <select class="form-control select2 select2-hidden-accessible" name="id_iva">
                     <?php foreach ($ivas as $iva){?>
-                        <option value="<?= $iva->valor?>"><?= $iva->valor.'% ('.$iva->descricao.')'?></option>
+                        <option value="<?= $iva->id?>"><?= $iva->valor.'% ('.$iva->descricao.')'?></option>
                     <?php } ?>
                 </select>
                 <br>

@@ -68,4 +68,16 @@ class Controller
     {
         return isset($_GET[$key]);
     }
+
+    public function gerarpass(){
+        $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        $pass = '';
+
+        for ($i = 0; $i < 12; $i++) {
+            $randomIndex = rand(0, strlen($characters) - 1);
+            $pass .= $characters[$randomIndex];
+        }
+
+        return $pass;
+    }
 }

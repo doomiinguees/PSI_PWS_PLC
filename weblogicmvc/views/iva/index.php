@@ -27,11 +27,22 @@
                                 <td><?=$iva->valor?> %</td>
                                 <td><?=$iva->descricao?></td>
                                 <td>
+                                    <?php
+                                        if ($iva->estado == 'Ativo'):
+                                    ?>
                                     <a href="index.php?c=iva&a=mudaestado&id=<?=$iva->id?>" class="btn btn-info" role="button"><?=$iva->estado?></a>
+                                    <?php
+                                      else:
+                                    ?>
+                                    <a href="index.php?c=iva&a=mudaestado&id=<?=$iva->id?>" class="btn btn-warning" role="button"><?=$iva->estado?></a>
+                                    <?php
+                                    endif;
+                                    ?>
+
                                 </td>
                                 <td>
                                     <a href="index.php?c=iva&a=edit&id=<?=$iva->id?>" class="btn btn-info" role="button">Editar</a>
-                                    <a href="index.php?c=iva&a=delete&id=<?=$iva->id?>" class="btn btn-info" role="button">Eliminar</a>
+                                    <a href="index.php?c=iva&a=delete&id=<?=$iva->id?>" class="btn btn-warning" role="button">Eliminar</a>
                                     <!-- Repor password?-->
                                 </td>
                             </tr>

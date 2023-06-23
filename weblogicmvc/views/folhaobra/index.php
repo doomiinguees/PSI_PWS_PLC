@@ -15,39 +15,55 @@
                         <table class="table table-bordered table-hover">
                             <thead>
                                 <th>Id</th>
-                                <?php if ($auth->getId() != 3){ ?>
+                                <?php if ($auth->getRole() != 3){?>
                                 <th>Cliente</th>
-                                <?php } ?>
+                                <?php }?>
                                 <th>Funcionário</th>
                                 <th>Total</th>
                                 <th>Estado</th>
                                 <th>Ações</th>
                             </thead>
                                 <tbody>
-                                <?php
-                                    $auth = new Auth();
-                                    foreach ($folhas as $folha) { ?>
+                                    <?php
+                                        $auth = new Auth();
+                                        foreach ($folhas as $folha) {
+                                    ?>
                                     <tr>
-                                        <td><?=$folhas->id?></td>
+                                        <td><?=$folha->id + 5000?></td>
                                         <?php if ($auth->getId() != 3){ ?>
-                                        <td><?=$folhas->cliente->nome?></td>
+                                        <td><?=$folha->cliente->nome?></td>
                                         <?php } ?>
-                                        <td><?=$auth->getId();?></td>
-                                        <td><?=$folhas->total?> </td>
-                                        <td><?=$folhas->estado?> </td>
+                                        <td><?=$folha->funcionario->nome?></td>
+                                        <td><?=$folha->total?> </td>
+                                        <td><?=$folha->estado?> </td>
                                         <td>
-                                            <a href="index.php?c=folhaobra&a=show&id=<?=$folhas->id ?>" class="btn btn-info" role="button">Show</a>
-                                            <a href="index.php?c=folhaobra&a=edit&id=<?=$folhas->id ?>" class="btn btn-info" role="button">Edit</a>
-                                            <a href="index.php?c=folhaobra&a=delete&id=<?=$folhas->id ?>" class="btn btn-warning" role="button">Delete</a>
+                                            <a href="index.php?c=folhaobra&a=show&id=<?=$folha->id ?>" class="btn btn-info" role="button">Show</a>
+                                            <?php
+                                                if ($auth->getRole() != 3):
+                                                if ($folha->estado != 'Anulada'):
+                                            ?>
+                                                    <a href="index.php?c=folhaobra&a=edit&id=<?=$folha->id ?>" class="btn btn-info" role="button">Edit</a>
+                                                    <a href="index.php?c=folhaobra&a=delete&id=<?=$folha->id ?>" class="btn btn-warning" role="button">Anular</a>
+                                                    <a href="index.php?c=folhaobra&a=emitir&id=<?=$folha->id ?>" class="btn btn-info" role="button">Emitir</a>
+                                            <?php
+                                                endif;
+                                                else:
+                                            ?>
+                                                    <a href="index.php?c=folhaobra&a=edit&id=<?=$folha->id ?>" class="btn btn-info" role="button">Pagar</a>
+                                            <?php
+                                                endif;
+                                            ?>
                                         </td>
                                     </tr>
                                 <?php } ?>
                                 </tbody>
                         </table>
                         <br>
-                        <?php if ($auth->getId() != 3){ ?>
-                        <a href="index.php?c=folhaobra&a=create" class="btn btn-info" role="button">Criar Folha de Obra</a>
-                        <?php } ?>
+                            <?php
+                                if ($auth->getRole() != 3):
+                            ?>
+                                <a href="index.php?c=folhaobra&a=scliente" class="btn btn-info" role="button">Criar Folha de Obra</a>
+                            <?php endif; ?>
                     </div>
                 </div>
             </div>
