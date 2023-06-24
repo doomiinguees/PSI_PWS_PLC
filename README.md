@@ -2,7 +2,7 @@
 Programação para a Web - Servidor
 HD Services - Projeto de lançamento de folhas de obra
 
-![Logo](relative/path/to/imagem.png)
+![Logo](imagem.png)
 
 
 David Domingues, 2220897
