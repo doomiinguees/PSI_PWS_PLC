@@ -2,7 +2,7 @@
 Programação para a Web - Servidor
 HD Services - Projeto de lançamento de folhas de obra
 
-![alt text](https://github.com/doomiinguees/PSI_PWS_PLC/tree/main/imagem.png)
+![Logo](relative/path/to/imagem.png)
 
 
 David Domingues, 2220897
