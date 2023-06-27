@@ -9,10 +9,10 @@
         <div class="card-body">
             <form method="post" action="index.php?c=iva&a=update&id=<?=$iva->id?>">
                 <label for="exampleInputEmail1">Percentagem</label>
-                <input type="number" class="form-control" name="valor" placeholder="Percentagem">
+                <input type="number" class="form-control" name="valor" value="<?php if(isset($iva)){ echo $iva->valor;}?>" placeholder="Percentagem">
                 <br>
                 <label for="exampleInputEmail1">Descrição</label>
-                <input type="text" class="form-control" name="descricao" placeholder="Descrição">
+                <input type="text" class="form-control" name="descricao" value="<?php if(isset($iva)){ echo $iva->descricao;}?>" placeholder="Descrição">
                 <br>
                 <label for="exampleInputEmail1">Estado</label>
                 <select class="form-control select2 select2-hidden-accessible" name="estado">
@@ -20,7 +20,7 @@
                     <option value="Inativo">Inativo</option>
                 </select>
                 <br>
-                <button type="submit" style="float: right;" class="btn btn-primary">Criar Iva</button>
+                <button type="submit" style="float: right;" class="btn btn-primary">Editar Iva</button>
             </form>
         </div>
     </div>

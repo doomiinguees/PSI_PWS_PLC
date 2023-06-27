@@ -48,9 +48,9 @@ class IvaController extends Controller
 
     public function update($id){
         $iva = Iva::find($id);
-        $user->update_attributes($this->getHTTPPost());
-        if($user->is_valid()){
-            $user->save();
+        $iva->update_attributes($this->getHTTPPost());
+        if($iva->is_valid()){
+            $iva->save();
             $this->redirectToRoute('iva', 'index');
         } else {
             $this->renderView('iva', 'edit', ['iva'=>$iva]);

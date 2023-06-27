@@ -15,7 +15,7 @@
                     <div class="row">
                         <div class="col-12">
                             <h4>
-                                <i class="fas fa-globe"></i> AdminLTE, Inc.
+                                <i class="fas fa-globe"></i> HD Services
                                 <small class="float-right">Date: <?= date('d-m-Y') ?></small>
                             </h4>
                         </div>
@@ -26,7 +26,11 @@
                         <div class="col-sm-4 invoice-col">
                             Empresa
                             <address>
-
+                                <strong><?= $empresa->name ?></strong><br>
+                                <?= $empresa->morada ?><br>
+                                <?= $empresa->codpostal ?>, <?= $empresa->localidade ?><br>
+                                <?= $empresa->telefone ?><br>
+                                <?= $empresa->email ?>
                             </address>
                         </div>
                         <!-- /.col -->
@@ -51,6 +55,8 @@
                 </div>
             </div>
             <div class="col-12">
+                <a href="index.php?c=folhaobra&a=store&id=<?= $cliente->id?>" class="btn btn-info" style="float: right;" role="button">Adicionar Linha</a>
+                <br><br>
                 <table class="table table-striped">
                     <thead>
                     <tr>
@@ -65,10 +71,45 @@
                     <tbody>
                         <tr></tr>
                         <tr></tr>
+
                     </tbody>
                 </table>
-                <br>
-                <a href="index.php?c=folhaobra&a=store&id=<?=$cliente->id ?>" class="btn btn-info" style="float: right;" role="button">Adicionar Linha</a>
+
+                <br><br><br>
+                <div class="row">
+                    <!-- accepted payments column -->
+                    <div class="col-6">
+                        <p class="lead">Payment Methods:</p>
+                        <img src="public/img/credit/visa.png" alt="Visa">
+                        <img src="public/img/credit/mastercard.png" alt="Mastercard">
+                        <img src="public/img/credit/american-express.png" alt="American Express">
+                        <img src="public/img/credit/paypal2.png" alt="Paypal">
+
+                    </div>
+                    <!-- /.col -->
+                    <div class="col-6">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <tbody><tr>
+                                    <th style="width:50%">Subtotal</th>
+                                    <td>0€</td>
+                                </tr>
+                                <tr>
+                                    <th>IVA</th>
+                                    <td>0€</td>
+                                </tr>
+                                <tr>
+                                </tr>
+                                <tr>
+                                    <th>Total</th>
+                                    <td>0€</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <!-- /.col -->
+                </div>
 
             </div>
         </div>

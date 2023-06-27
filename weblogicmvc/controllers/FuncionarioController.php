@@ -10,7 +10,8 @@ class FuncionarioController extends Controller
     }
 
     public function index(){
-        $users = User::find_all_by_role('1', '2');
+        $roles = array('1', '2');
+        $users = User::find_all_by_role($roles);
         $this->renderView('funcionario', 'index', ['users'=>$users]);
     }
 
@@ -28,9 +29,11 @@ class FuncionarioController extends Controller
     }
 
     public function store(){
-        $user = new User($this-> getHTTPPost());
+        $user->password = $this->gerarpass();
+
         if ($user->is_valid()){
             $user->save();
+            sendPassword($user->email, $user->nome, $user->password, $user->username);
             $this->redirectToRoute('funcionario', 'index');
         } else {
             $this->renderView('funcionario', 'create', ['user'=>$user]);
@@ -55,6 +58,14 @@ class FuncionarioController extends Controller
         } else {
             $this->renderView('funcionario', 'edit', ['user'=>$user]);
         }
+    }
+
+    public function reporpass($id){
+        $user = User::find($id);
+        $user->password = $this->gerarpass();
+        $user->save();
+        sendPassword($user->email, $user->nome, $user->password, $user->username);
+        $this->redirectToRoute('funcionario', 'index');
     }
 
 }

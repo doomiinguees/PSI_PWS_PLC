@@ -4,6 +4,7 @@
     require_once 'controllers/EmpresaController.php';
     require_once 'controllers/ClienteController.php';
     require_once 'controllers/IvaController.php';
+    require_once 'controllers/FOcontroller.php';
     require_once 'controllers/FuncionarioController.php';
     require_once 'controllers/ServiceController.php';
     require_once 'controllers/FolhaobraController.php';
@@ -31,6 +32,7 @@
             'store' => ['POST', 'ClienteController', 'store'],
             'edit' => ['GET', 'ClienteController', 'edit'],
             'update' => ['POST', 'ClienteController', 'update'],
+            'pesquisa' => ['POST', 'ClienteController', 'pesquisa'],
             'reporpass' => ['GET', 'ClienteController', 'reporpass']
         ],
         'funcionario' =>[
@@ -39,7 +41,8 @@
             'create' => ['GET', 'FuncionarioController', 'create'],
             'store' => ['POST', 'FuncionarioController', 'store'],
             'edit' => ['GET', 'FuncionarioController', 'edit'],
-            'update' => ['POST', 'FuncionarioController', 'update']
+            'update' => ['POST', 'FuncionarioController', 'update'],
+            'reporpass' => ['GET', 'FuncionarioController', 'reporpass']
         ],
         'iva' =>[
             'index' => ['GET', 'IvaController', 'index'],
@@ -65,7 +68,12 @@
             'store' => ['GET', 'FolhaobraController', 'store'],
             'edit' => ['GET', 'FolhaobraController', 'edit'],
             'update' => ['POST', 'FolhaobraController', 'update'],
-            'scliente' => ['GET', 'FolhaobraController', 'scliente']
+            'pesquisa' => ['POST', 'FolhaobraController', 'pesquisa'],
+            'scliente' => ['GET', 'FolhaobraController', 'scliente'],
+            'anular' => ['GET', 'FolhaobraController', 'anular'],
+            'emitir' => ['GET', 'FolhaobraController', 'emitir'],
+            'pay' => ['GET', 'FolhaobraController', 'pay'],
+            'print' => ['GET', 'FolhaobraController', 'print']
         ],
         'linhaobra' =>[
             'index' => ['GET', 'LinhaobraController', 'index'],
@@ -74,7 +82,11 @@
             'store' => ['POST', 'LinhaobraController', 'store'],
             'edit' => ['GET', 'LinhaobraController', 'edit'],
             'update' => ['POST', 'LinhaobraController', 'update'],
+            'delete' => ['GET', 'LinhaobraController', 'delete'],
             'scliente' => ['GET', 'LinhaobraController', 'scliente']
+        ],
+        'foffice' =>[
+            'empresaShow' => ['GET', 'FOController', 'empresaShow']
         ]
     ];
 

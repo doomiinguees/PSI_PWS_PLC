@@ -1,4 +1,4 @@
-<h1 class="m-0">Folha de Obra</h1>
+<h1 class="m-0"></h1>
 </div><!-- /.col -->
 </div><!-- /.row -->
 </div><!-- /.container-fluid -->
@@ -15,7 +15,7 @@
                     <div class="row">
                         <div class="col-12">
                             <h4>
-                                <i class="fas fa-globe"></i> AdminLTE, Inc.
+                                <i class="fas fa-globe"></i> HD Services
                                 <small class="float-right">Date: <?= date('d-m-Y') ?></small>
                             </h4>
                         </div>
@@ -28,7 +28,7 @@
                             <address>
                                 <strong><?= $folha->empresa->name ?></strong><br>
                                 <?= $folha->empresa->morada ?><br>
-                                <?= $folha->empresa->codpostal ?>, <?= $empresa->localidade ?><br>
+                                <?= $folha->empresa->codpostal ?>, <?= $folha->empresa->localidade ?><br>
                                 <?= $folha->empresa->telefone ?><br>
                                 <?= $folha->empresa->email ?>
                             </address>
@@ -55,21 +55,18 @@
                 </div>
             </div>
             <div class="col-12">
-                <?php
-                if ($folha->estado == 'Em Lançamento') :
-                ?>
                 <table class="table table-striped">
                     <thead>
                     <tr>
                         <th>Serviço</th>
                         <th>Quantidade</th>
+                        <th></th>
                     </tr>
                     </thead>
 
                     <tbody>
                     <tr style="color: white">
-
-                        <form method="post" action="index.php?c=linhaobra&a=store&id=<?= $folha->id ?>">
+                        <form method="post" action="index.php?c=linhaobra&a=update&id=<?= $linha->id ?>">
                             <td>
                                 <select class="form-control select2 select2-hidden-accessible" name="id_service">
                                     <?php
@@ -82,51 +79,15 @@
                                 </select>
                             </td>
                             <td>
-                                <input type="number" class="form-control" name="quantidade">
+                                <input type="number" class="form-control" value="<?php if(isset($linha)) { echo $linha->quantidade; }?>" name="quantidade">
                             </td>
-
-                    </tr>
-
-                    </tbody>
-                </table>
-                <button type="submit" style="float: right;" class="btn btn-info">Adicionar</button>
-                </form>
-                <?php
-                    endif;
-                ?>
-                ?>
-                <br><br>
-                <table class="table table-striped">
-                    <thead>
-                    <tr>
-                        <th>Serviço</th>
-                        <th>Quantidade</th>
-                        <th>Valor</th>
-                        <th>Valor iva</th>
-                        <th>Ações</th>
-                    </tr>
-                    </thead>
-
-                    <tbody>
-                    <?php
-                    foreach ($folha->linhaobras  as $linha) {
-
-                        ?>
-                        <tr style="color: white">
-                            <td><?= '['. $linha->service->referencia. ']  ' .$linha->service->nome?></td>
-                            <td><?= $linha->quantidade ?></td>
-                            <td><?= $linha->valor ?></td>
-                            <td><?= $linha->valiva ?></td>
                             <td>
-                                <a href="index.php?c=linhaobra&a=edit&id=<?=$linha->id ?>" class="btn btn-info" role="button">Editar</a>
-                                <a href="index.php?c=linhaobra&a=delete&id=<?=$linha->id ?>" class="btn btn-warning" role="button">Apagar</a>
+                                <button type="submit" style="float: right;" class="btn btn-info">Editar</button>
                             </td>
-                        </tr>
-                        <?php
-                    }
-                    ?>
+                    </tr>
                     </tbody>
                 </table>
+                </form>
             </div>
         </div>
     </div>

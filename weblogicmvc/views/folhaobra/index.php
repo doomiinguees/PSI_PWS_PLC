@@ -14,6 +14,9 @@
                     <div class="card-body">
                         <table class="table table-bordered table-hover">
                             <thead>
+                                <?php
+                                    $auth = new Auth();
+                                ?>
                                 <th>Id</th>
                                 <?php if ($auth->getRole() != 3){?>
                                 <th>Cliente</th>
@@ -21,37 +24,47 @@
                                 <th>Funcionário</th>
                                 <th>Total</th>
                                 <th>Estado</th>
-                                <th>Ações</th>
+                                <th>Ações
+                                    <?php echo $auth->getRole();?></th>
                             </thead>
                                 <tbody>
                                     <?php
-                                        $auth = new Auth();
                                         foreach ($folhas as $folha) {
                                     ?>
                                     <tr>
-                                        <td><?=$folha->id + 5000?></td>
-                                        <?php if ($auth->getId() != 3){ ?>
+                                        <td><?=$folha->id?></td>
+                                        <?php if ($auth->getRole() != 3){ ?>
                                         <td><?=$folha->cliente->nome?></td>
                                         <?php } ?>
                                         <td><?=$folha->funcionario->nome?></td>
-                                        <td><?=$folha->total?> </td>
+                                        <td><?=$folha->total + $folha->ivatotal?> </td>
                                         <td><?=$folha->estado?> </td>
                                         <td>
-                                            <a href="index.php?c=folhaobra&a=show&id=<?=$folha->id ?>" class="btn btn-info" role="button">Show</a>
+                                            <a href="index.php?c=folhaobra&a=show&id=<?=$folha->id ?>" class="btn btn-info" role="button">Ver detalhes</a>
                                             <?php
-                                                if ($auth->getRole() != 3):
-                                                if ($folha->estado != 'Anulada'):
+                                                if ($auth->getRole() != 3){
+                                                    if ($folha->estado == 'Em Lançamento'){
+
+                                                ?>
+                                                        <a href="index.php?c=folhaobra&a=edit&id=<?=$folha->id ?>" class="btn btn-warning" role="button">Editar</a>
+
+                                                        <a href="index.php?c=folhaobra&a=emitir&id=<?=$folha->id ?>" class="btn btn-success" role="button">Emitir</a>
+                                                <?php
+                                                    }elseif($folha->estado == 'Emitida'){
+                                                ?>
+                                                <a href="index.php?c=folhaobra&a=anular&id=<?=$folha->id ?>" class="btn btn-danger" role="button">Anular</a>
+                                            <?php
+                                                }
+                                                }elseif ($auth->getRole() == 3 && $folha->estado != 'Paga'){
                                             ?>
-                                                    <a href="index.php?c=folhaobra&a=edit&id=<?=$folha->id ?>" class="btn btn-info" role="button">Edit</a>
-                                                    <a href="index.php?c=folhaobra&a=delete&id=<?=$folha->id ?>" class="btn btn-warning" role="button">Anular</a>
-                                                    <a href="index.php?c=folhaobra&a=emitir&id=<?=$folha->id ?>" class="btn btn-info" role="button">Emitir</a>
+                                                    <a href="index.php?c=folhaobra&a=pay&id=<?=$folha->id ?>" class="btn btn-success" role="button">Pagar</a>
                                             <?php
-                                                endif;
-                                                else:
+                                                }
+                                                if ($folha->estado == 'Paga'){
                                             ?>
-                                                    <a href="index.php?c=folhaobra&a=edit&id=<?=$folha->id ?>" class="btn btn-info" role="button">Pagar</a>
+                                                    <a href="index.php?c=folhaobra&a=print&id=<?= $folha->id ?>" target="_blank" class="btn btn-light" role="button">Imprimir</a>
                                             <?php
-                                                endif;
+                                                }
                                             ?>
                                         </td>
                                     </tr>

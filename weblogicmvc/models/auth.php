@@ -34,9 +34,9 @@
         }
 
         public function isLoggedinAs($roles=[]){
-            if (isLoggedIn()){
-                $role = $this.$this->getRole();
-
+            if ($this->isLoggedIn()){
+                $role = $this->getRole();
+                return in_array($role, $roles);
             }
         }
 

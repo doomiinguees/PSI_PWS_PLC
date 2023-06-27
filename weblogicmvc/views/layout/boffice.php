@@ -58,9 +58,15 @@
                         </a>
                     </li>
                     <li class="nav-item">
+                        <?php
+                            if ($auth->getRole() == 1){
+                        ?>
                         <a href="index.php?c=funcionario&a=index" class="nav-link">
                         <p>Funcionários</p>
                         </a>
+                        <?php
+                            }
+                        ?>
                     </li>
                     <li class="nav-item">
                         <a href="#" class="nav-link">
@@ -71,7 +77,7 @@
                         </a>
                         <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="index.html" class="nav-link">
+                            <a href="index.php?c=funcionario&a=edit&id=<?=$auth->getId()?>" class="nav-link">
                             <p>Alterar Dados de Conta</p>
                             </a>
                         </li>

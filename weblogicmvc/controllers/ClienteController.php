@@ -36,7 +36,8 @@ class ClienteController extends Controller
 
         if ($user->is_valid()){
             $user->save();
-            sendPassword($user->email, $user->nome, $user->password);
+            sendPassword($user->email, $user->nome, $user->password, $user->username);
+
             $this->redirectToRoute('cliente', 'index');
         } else {
             $this->renderView('cliente', 'create', ['user'=>$user]);
@@ -67,7 +68,7 @@ class ClienteController extends Controller
         $user = User::find($id);
         $user->password = $this->gerarpass();
         $user->save();
-        sendPassword($user->email, $user->nome, $user->password);
+        sendPassword($user->email, $user->nome, $user->password, $user->username);
         $this->redirectToRoute('cliente', 'index');
     }
 }

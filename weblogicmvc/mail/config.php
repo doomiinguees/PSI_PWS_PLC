@@ -33,4 +33,4 @@ define('CONTACTFORM_MAIL_ENCODING', '8bit'); // Can be: 7bit, 8bit, base64, bina
 
 // The language used for error message and the like.
 // Supports 2 letter language codes, e.g. en, fr, es, cn. Default: en.
-define('CONTACTFORM_LANGUAGE', 'pt');
+define('CONTACTFORM_LANGUAGE', 'en');

@@ -40,7 +40,7 @@
                 <label for="exampleInputEmail1">Código Postal</label>
                 <input type="text" class="form-control" name="codpostal" placeholder="Código Postal">
                 <br>
-                <button type="submit" style="float: right;" class="btn btn-primary">Criar Cliente</button>
+                <button type="submit" style="float: right;" class="btn btn-primary">Criar funcionário</button>
             </form>
         </div>
     </div>

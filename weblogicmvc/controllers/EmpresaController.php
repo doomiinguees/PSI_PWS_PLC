@@ -11,7 +11,7 @@ class EmpresaController extends Controller
 
     public function index(){
         $empresa = Empresa::First();
-        $this->renderView('empresa','index', ['empresa'=>$empresa]);
+        $this->renderView('empresa','index', ['empresa'=>$empresa], 'boffice');
     }
 
     public function edit(){

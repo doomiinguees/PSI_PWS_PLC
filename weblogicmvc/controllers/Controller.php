@@ -33,9 +33,8 @@ class Controller
 
     protected function authorizationFilter($roles){
         $auth = new Auth();
-
-        if(!$auth->IsLoggedIn($roles)){
-            header('index.php?'.INVALID_ACCESS_ROUTE);
+        if($auth->isLoggedinAs($roles)){
+            header('Location: index.php?'.INVALID_ACCESS_ROUTE);
         }
     }
 
@@ -70,7 +69,7 @@ class Controller
     }
 
     public function gerarpass(){
-        $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*()_-=+\|:;",./~`';
         $pass = '';
 
         for ($i = 0; $i < 12; $i++) {

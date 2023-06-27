@@ -39,7 +39,7 @@
                 if(!$auth->isLoggedIn())
                 {
                     if ($auth->getRole() == 3){
-                        $this->redirectToRoute('home', 'index');
+                        $this->redirectToRoute('foffice', 'empresaShow');
                     }else{
                         $this->redirectToRoute('home', 'index');
                     }

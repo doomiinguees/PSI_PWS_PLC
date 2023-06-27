@@ -15,7 +15,6 @@
                     <div class="row">
                         <div class="col-12">
                             <h4>
-
                                 <img src="public/img/mlogo.png" alt="HD Services" class="brand-image img-circle elevation-3" style="opacity: .8" height="25" width="25"></i> HD Services
                                 <small class="float-right">Date: <?= date('d-m-Y') ?></small>
                             </h4>
@@ -29,7 +28,7 @@
                             <address>
                                 <strong><?= $folha->empresa->name ?></strong><br>
                                 <?= $folha->empresa->morada ?><br>
-                                <?= $folha->empresa->codpostal ?>, <?= $empresa->localidade ?><br>
+                                <?= $folha->empresa->codpostal ?>, <?= $folha->empresa->localidade ?><br>
                                 <?= $folha->empresa->telefone ?><br>
                                 <?= $folha->empresa->email ?>
                             </address>
@@ -47,9 +46,7 @@
                         </div>
                         <!-- /.col -->
                         <div class="col-sm-4 invoice-col">
-                            <b>Invoice # <?= $folha->id ?></b><br>
-                            <br>
-                            <a href="index.php?c=folhaobra&a=emitir&id=<?=$folha->id ?>" style="float: left;" class="btn btn-info" role="button">Emitir</a>
+                            <b>Invoice # <?= $folha->id ?></b>
                             <br><br>
                             <a href="index.php?c=folhaobra&a=index" style="float: left;" class="btn btn-info" role="button">Ir para index de folhas de obra</a>
                             <b><!--mais dados--></b>
@@ -64,71 +61,36 @@
                     <tr>
                         <th>Serviço</th>
                         <th>Quantidade</th>
-                    </tr>
-                    </thead>
-
-                    <tbody>
-                        <tr style="color: white">
-                            <form method="post" action="index.php?c=linhaobra&a=store&id=<?= $folha->id ?>">
-                                <td>
-                                    <select class="form-control select2 select2-hidden-accessible" name="id_service">
-                                        <?php
-                                            foreach ($services as $service){
-                                        ?>
-                                            <option value="<?= $service->id ?>"><?= $service->nome.' | '.$service->referencia ?></option>
-                                        <?php
-                                        }
-                                        ?>
-                                    </select>
-                                </td>
-                                <td>
-                                    <input type="number" class="form-control" name="quantidade">
-                                </td>
-
-                        </tr>
-                    </tbody>
-                </table>
-                                <button type="submit" style="float: right;" class="btn btn-info">Adicionar</button>
-                            </form>
-                <br><br>
-                <table class="table table-striped">
-                    <thead>
-                    <tr>
-                        <th>Serviço</th>
-                        <th>Quantidade</th>
                         <th>Valor</th>
-                        <th>Valor iva</th>
-                        <th>Ações</th>
+                        <th>Valor IVA</th>
+
                     </tr>
                     </thead>
 
                     <tbody>
-                    <?php
-                    $subtotal = 0;
-                    $totaliva = 0;
-                    $total = 0;
-                    foreach ($folha->linhaobras as $linha) {
-                        $subtotal = $subtotal + $linha->valor;
-                        $totaliva = $totaliva + $linha->valiva;
-
-                    ?>
+                    <tr style="color: white">
+                        <?php
+                        $subtotal = 0;
+                        $totaliva = 0;
+                        $total = 0;
+                        foreach ($folha->linhaobras as $linha) {
+                            $subtotal = $subtotal + $linha->valor;
+                            $totaliva = $totaliva + $linha->valiva;
+                        ?>
                     <tr style="color: white">
                         <td><?= '['. $linha->service->referencia. ']  ' .$linha->service->nome?></td>
                         <td><?= $linha->quantidade ?></td>
                         <td><?= $linha->valor ?></td>
                         <td><?= $linha->valiva ?></td>
-                        <td>
-                            <a href="index.php?c=linhaobra&a=edit&id=<?=$linha->id ?>" class="btn btn-info" role="button">Editar</a>
-                            <a href="index.php?c=linhaobra&a=delete&id=<?=$linha->id ?>" class="btn btn-warning" role="button">Apagar</a>
-                        </td>
                     </tr>
                     <?php
-                            }
+                    }
                     $total = $total + $subtotal + $totaliva;
                     ?>
+
+                    </tr>
                     </tbody>
                 </table>
-
                 <br><br><br>
                 <div class="row">
                     <!-- accepted payments column -->
