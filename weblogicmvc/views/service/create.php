@@ -15,7 +15,7 @@
                 <input type="text" class="form-control" name="referencia" placeholder="Referência">
                 <br>
                 <label for="exampleInputEmail1">Preço/Hora</label>
-                <input type="text" class="form-control" name="precohora" placeholder="Preço/Hora">
+                <input type="number" class="form-control" name="precohora" placeholder="Preço/Hora">
                 <br>
                 <label for="exampleInputEmail1">IVA</label>
                 <select class="form-control select2 select2-hidden-accessible" name="iva_id">

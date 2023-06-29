@@ -21,7 +21,7 @@
                         <div class="info-box-content">
                             <span class="info-box-text">Número de Serviços</span>
 
-                            <span class="info-box-number"><?= Service::count() ?></span> //mandar por renderv
+                            <span class="info-box-number"><?= $nservices ?></span>
                         </div>
                     </div>
                 </div>
@@ -31,7 +31,7 @@
 
                         <div class="info-box-content">
                             <span class="info-box-text">Número de Utilizadores</span>
-                            <span class="info-box-number"><?= User::count() ?> </span>
+                            <span class="info-box-number"><?= $nusers ?> </span>
                         </div>
                     </div>
                 </div>
@@ -41,7 +41,7 @@
 
                         <div class="info-box-content">
                             <span class="info-box-text">Número de Folhas de obra</span>
-                            <span class="info-box-number"><?= Folhaobra::count() ?></span>
+                            <span class="info-box-number"><?= $nfolhas ?></span>
                         </div>
                     </div>
                 </div>

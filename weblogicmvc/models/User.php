@@ -15,18 +15,6 @@ class User extends \ActiveRecord\Model
         array('role')
     );
 
-    static $validates_length_of = array(
-        array('nome', 'maximum' => 45),
-        array('username', 'maximum' => 20),
-        array('password', 'maximum' => 25),
-        array('email', 'maximum' => 30),
-        array('telefone', 'is' => 9),
-        array('nif', 'is' => 9),
-        array('morada', 'maximum' => 45),
-        array('localidade', 'maximum' => 15),
-        array('codpostal', 'is' => 8),
-        array('role', 'maximum' => 45)
-    );
 
     static $validates_numericality_of = array(
         array('telefone', 'only_integer' => true),

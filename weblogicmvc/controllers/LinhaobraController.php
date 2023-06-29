@@ -34,8 +34,7 @@ class LinhaobraController extends Controller
         $linhas = Linhaobra::find('all',['id_folhaobra'=>$id]);
         $services = Service::all();
 
-
-            $this->renderView('linhaobra', 'create', ['linhas'=>$linhas, 'folha'=>$folha, 'cliente'=>$cliente, 'empresa'=>$empresa, 'services'=>$services]);
+        $this->renderView('linhaobra', 'create', ['linhas'=>$linhas, 'folha'=>$folha, 'cliente'=>$cliente, 'empresa'=>$empresa, 'services'=>$services]);
 
     }
 
@@ -47,7 +46,6 @@ class LinhaobraController extends Controller
         $linha->valiva = $linha->valor * $servico_selecionado->iva->valor / 100;
         $linha->id_folhaobra = $id;
         $this->fazcalculos($linha);
-
         if ($linha->is_valid()){
             $linha->save();
             $this->redirectToRoute('linhaobra', 'create', ['id'=>$linha->id_folhaobra]);
@@ -79,9 +77,26 @@ class LinhaobraController extends Controller
             $this->renderView('cliente', 'edit', ['linha'=>$linha]);
         }
     }
+/*
+    public function sservice($id){
+        $linha = Linhaobra::find($id);
+        $services = Service::all();
+        $this->renderView('linhaobra', 'sservice', ['linha'=>$linha,'services'=>$services]);
+    }*/
+
+    public function addlinha($id){
+        $service = Service::find($id);
+        $this->redirectToRoute('linhaobra', 'create', ['service'=>$service]);
+
+    }
 
     public function delete($id){
         $linha = Linhaobra::find($id);
+    //    $linha->delete();
+        $folha = Folhaobra::find($linha->id_folhaobra);
+        $folha->total = $folha->total - $linha->valor;
+        $folha->total = $folha->total - $linha->valiva;
+        $folha->save();
         $linha->delete();
         $this->redirectToRoute('linhaobra', 'create', ['id'=>$linha->id_folhaobra]);
     }

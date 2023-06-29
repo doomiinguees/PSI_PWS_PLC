@@ -1,34 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <link href="public/css/adminlte_print.css" rel="stylesheet">
-    <title><?=APP_NAME?></title>
-    <!-- Google Font: Source Sans Pro -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
-    <!-- overlayScrollbars -->
-    <link rel="stylesheet" href="public/plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
-    <!-- Font Awesome Icons -->
-    <link rel="stylesheet" href="public/plugins/fontawesome-free/css/all.min.css">
-    <!-- Theme style -->
-    <link rel="stylesheet" href="public/css/adminlte.min.css">
-</head>
 
-<body class="hold-transition dark-mode sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
-<div class="wrapper">
-
-    <div class="content-wrapper">
-        <!-- Content Header (Page header) -->
-        <div class="content-header">
-            <div class="container-fluid">
-                <div class="row mb-2">
-                    <div class="col-sm-6">
-                        <h1 class="m-0">Folha de Obra</h1>
-                    </div><!-- /.col -->
-                </div><!-- /.row -->
-            </div><!-- /.container-fluid -->
-        </div>
-<!-- /.content-header -->
-<!-- Main content -->
         <section class="content">
             <div class="container-fluid">
                 <div class="row">
@@ -39,8 +9,8 @@
                             <div class="row">
                                 <div class="col-12">
                                     <h4>
-                                        <img src="public/img/mlogo.png" alt="HD Services" class="brand-image img-circle elevation-3" style="opacity: .8" height="25" width="25"></i>HD Services
-                                        <small class="float-right">Date: <?= date('d-m-Y') ?></small>
+                                        <img src="public/img/mlogo.png" alt="HD Services" class="brand-image img-circle elevation-3" style="opacity: .8" height="25" width="25"></i>  HD Services
+                                            <small class="float-right">Data: <?= date('l, d F Y H:i', strtotime($folha->data)) ?></small>
                                     </h4>
                                 </div>
                                 <!-- /.col -->
@@ -78,10 +48,11 @@
                         </div>
                     </div>
                     <div class="col-12">
-                        <table class="table table-striped">
+                        <table class="table table-striped" style="color: black">
                             <thead>
                             <tr>
                                 <th>Serviço</th>
+                                <th>Valor unitário</th>
                                 <th>Quantidade</th>
                                 <th>Valor</th>
                                 <th>Valor IVA</th>
@@ -99,11 +70,12 @@
                                 $subtotal = $subtotal + $linha->valor;
                                 $totaliva = $totaliva + $linha->valiva;
                                 ?>
-                            <tr style="color: white">
+                            <tr style="color: black">
                                 <td><?= '['. $linha->service->referencia. ']  ' .$linha->service->nome?></td>
+                                <td><?= $linha->service->precohora.'€' ?></td>
                                 <td><?= $linha->quantidade ?></td>
-                                <td><?= $linha->valor ?></td>
-                                <td><?= $linha->valiva ?></td>
+                                <td><?= $linha->valor.'€' ?></td>
+                                <td><?= $linha->valiva.'€' ?></td>
                             </tr>
                             <?php
                             }
@@ -134,13 +106,13 @@
                                         </tr>
                                         <tr>
                                             <th>IVA</th>
-                                            <td><?= $totaliva ?>€</td>
+                                            <td><?= $folha->ivatotal ?>€</td>
                                         </tr>
                                         <tr>
                                         </tr>
                                         <tr>
                                             <th>Total</th>
-                                            <td><?= $total ?>€</td>
+                                            <td><?= $folha->total ?>€</td>
                                         </tr>
                                         </tbody>
                                     </table>
@@ -153,27 +125,3 @@
             </div>
             <!-- /.card -->
         </section>
-    </div><!-- /.col -->
-<script src="public/plugins/jquery/jquery.min.js"></script>
-<!-- Bootstrap -->
-<script src="public/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-<!-- overlayScrollbars -->
-<script src="public/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
-<!-- AdminLTE App -->
-<script src="public/js/adminlte.js"></script>
-
-<!-- PAGE PLUGINS -->
-<!-- jQuery Mapael -->
-<script src="public/plugins/jquery-mousewheel/jquery.mousewheel.js"></script>
-<script src="public/plugins/raphael/raphael.min.js"></script>
-<script src="public/plugins/jquery-mapael/jquery.mapael.min.js"></script>
-<script src="public/plugins/jquery-mapael/maps/usa_states.min.js"></script>
-<!-- ChartJS -->
-<script src="../../public/plugins/chart.js/Chart.min.js"></script>
-
-<!-- AdminLTE for demo purposes -->
-<script src="../../public/js/demo.js"></script>
-<!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-<script src="../../public/js/pages/dashboard2.js"></script>
-</body>
-</html>

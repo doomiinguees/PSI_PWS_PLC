@@ -90,6 +90,8 @@
                 </table>
                                 <button type="submit" style="float: right;" class="btn btn-info">Adicionar</button>
                             </form>
+
+                      <!--  <a href="index.php?c=linhaobra&a=sservice" class="btn btn-info" role="button">Ver todos os Serviços</a>-->
                 <br><br>
                 <table class="table table-striped">
                     <thead>
@@ -107,7 +109,7 @@
                     $subtotal = 0;
                     $totaliva = 0;
                     $total = 0;
-                    foreach ($folha->linhaobras as $linha) {
+                    foreach ($linhas as $linha) {
                         $subtotal = $subtotal + $linha->valor;
                         $totaliva = $totaliva + $linha->valiva;
 

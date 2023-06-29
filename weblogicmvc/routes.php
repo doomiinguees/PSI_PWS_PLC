@@ -83,7 +83,8 @@
             'edit' => ['GET', 'LinhaobraController', 'edit'],
             'update' => ['POST', 'LinhaobraController', 'update'],
             'delete' => ['GET', 'LinhaobraController', 'delete'],
-            'scliente' => ['GET', 'LinhaobraController', 'scliente']
+            'scliente' => ['GET', 'LinhaobraController', 'scliente'],
+            'sservice' => ['GET', 'LinhaobraController', 'sservice']
         ],
         'foffice' =>[
             'empresaShow' => ['GET', 'FOController', 'empresaShow']

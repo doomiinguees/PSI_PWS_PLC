@@ -31,11 +31,10 @@ class FolhaobraController extends Controller
     public function show($id){
         $folha = Folhaobra::find($id);
         $linhas = Linhaobra::find_all_by_id_folhaobra($id); /// kpjsad
-
         if (is_null($folha)){
 
         }else{
-            $this->renderView('folhaobra', 'show', ['folha'=>$folha]);
+            $this->renderView('folhaobra', 'show', ['folha'=>$folha,  'linhas'=>$linhas]);
         }
     }
 
@@ -91,6 +90,8 @@ class FolhaobraController extends Controller
         $this->redirectToRoute('folhaobra', 'index');
     }
 
+
+
     public function pesquisa(){
         $termo = $_POST['termo'];
 
@@ -119,8 +120,7 @@ class FolhaobraController extends Controller
 
     public function print($id){
         $folha = Folhaobra::find($id);
-        $this->renderView('folhaobra', 'print', ['folha'=>$folha], 'login');
-
-
+        $linhas = Linhaobra::find_all_by_id_folhaobra($id);
+        $this->renderView('folhaobra', 'print', ['folha'=>$folha, 'linhas'=>$linhas], 'printoffice');
     }
 }

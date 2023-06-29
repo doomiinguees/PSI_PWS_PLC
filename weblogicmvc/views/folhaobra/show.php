@@ -16,7 +16,7 @@
                         <div class="col-12">
                             <h4>
                                 <img src="public/img/mlogo.png" alt="HD Services" class="brand-image img-circle elevation-3" style="opacity: .8" height="25" width="25"></i> HD Services
-                                <small class="float-right">Date: <?= date('d-m-Y') ?></small>
+                                <small class="float-right">Date: <?= date('l, d F Y H:i', strtotime($folha->data)) ?></small>
                             </h4>
                         </div>
                         <!-- /.col -->
@@ -60,6 +60,7 @@
                     <thead>
                     <tr>
                         <th>Serviço</th>
+                        <th>Valor unitário</th>
                         <th>Quantidade</th>
                         <th>Valor</th>
                         <th>Valor IVA</th>
@@ -73,15 +74,16 @@
                         $subtotal = 0;
                         $totaliva = 0;
                         $total = 0;
-                        foreach ($folha->linhaobras as $linha) {
+                        foreach ($linhas as $linha) {
                             $subtotal = $subtotal + $linha->valor;
                             $totaliva = $totaliva + $linha->valiva;
                         ?>
                     <tr style="color: white">
                         <td><?= '['. $linha->service->referencia. ']  ' .$linha->service->nome?></td>
+                        <td><?= $linha->service->precohora.'€' ?></td>
                         <td><?= $linha->quantidade ?></td>
-                        <td><?= $linha->valor ?></td>
-                        <td><?= $linha->valiva ?></td>
+                        <td><?= $linha->valor.'€' ?></td>
+                        <td><?= $linha->valiva.'€' ?></td>
                     </tr>
                     <?php
                     }

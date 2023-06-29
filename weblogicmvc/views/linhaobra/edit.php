@@ -84,10 +84,10 @@
                             <td>
                                 <button type="submit" style="float: right;" class="btn btn-info">Editar</button>
                             </td>
+                        </form>
                     </tr>
                     </tbody>
                 </table>
-                </form>
             </div>
         </div>
     </div>

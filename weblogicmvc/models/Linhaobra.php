@@ -10,12 +10,6 @@ class Linhaobra extends \ActiveRecord\Model
         array('id_service')
     );
 
-    static $validates_length_of = array(
-        array('quantidade', 'is' => 2),
-        array('valor', 'is' => 8),
-        array('valiva', 'is' => 8)
-    );
-
     static $validates_numericality_of = array(
         array('quantidade', 'only_integer' => true),
         array('valor', 'greater_than_or_equal_to' => 0),

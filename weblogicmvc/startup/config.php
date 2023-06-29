@@ -3,6 +3,7 @@
 
     define('APP_NAME', 'HD Services');
   define('INVALID_ACCESS_ROUTE', 'c=auth&a=index');
+setlocale(LC_TIME, 'pt_BR');
 
     ActiveRecord\Config::initialize(function($cfg)
     {

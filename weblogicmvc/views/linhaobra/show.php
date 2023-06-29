@@ -55,46 +55,6 @@
                 </div>
             </div>
             <div class="col-12">
-                <?php
-                if ($folha->estado == 'Em Lançamento') :
-                ?>
-                <table class="table table-striped">
-                    <thead>
-                    <tr>
-                        <th>Serviço</th>
-                        <th>Quantidade</th>
-                    </tr>
-                    </thead>
-
-                    <tbody>
-                    <tr style="color: white">
-
-                        <form method="post" action="index.php?c=linhaobra&a=store&id=<?= $folha->id ?>">
-                            <td>
-                                <select class="form-control select2 select2-hidden-accessible" name="id_service">
-                                    <?php
-                                    foreach ($services as $service){
-                                        ?>
-                                        <option value="<?= $service->id ?>"><?= $service->nome.' | '.$service->referencia ?></option>
-                                        <?php
-                                    }
-                                    ?>
-                                </select>
-                            </td>
-                            <td>
-                                <input type="number" class="form-control" name="quantidade">
-                            </td>
-
-                    </tr>
-
-                    </tbody>
-                </table>
-                <button type="submit" style="float: right;" class="btn btn-info">Adicionar</button>
-                </form>
-                <?php
-                    endif;
-                ?>
-                ?>
                 <br><br>
                 <table class="table table-striped">
                     <thead>
@@ -109,7 +69,7 @@
 
                     <tbody>
                     <?php
-                    foreach ($folha->linhaobras  as $linha) {
+                    foreach ($linhas  as $linha) {
 
                         ?>
                         <tr style="color: white">

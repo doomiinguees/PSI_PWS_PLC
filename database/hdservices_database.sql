@@ -11,13 +11,13 @@ use hdservices;
 CREATE TABLE `empresas` (
   `name` varchar(15) NOT NULL,
   `designacao` varchar(45) NOT NULL,
-  `email` varchar(25) NOT NULL,
+  `email` varchar(50) NOT NULL,
   `telefone` int NOT NULL,
   `nif` int NOT NULL,
   `morada` varchar(45) NOT NULL,
   `localidade` varchar(15) NOT NULL,
   `codPostal` varchar(8) NOT NULL,
-  `capSocial` decimal(8,2) NOT NULL,
+  `capSocial` decimal(10,2) NOT NULL,
   `id` int NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
@@ -28,7 +28,7 @@ CREATE TABLE `users` (
   `nome` varchar(45) NOT NULL,
   `username` varchar(20) NOT NULL,
   `password` varchar(25) NOT NULL,
-  `email` varchar(30) NOT NULL,
+  `email` varchar(50) NOT NULL,
   `telefone` int NOT NULL UNIQUE,
   `nif` int NOT NULL UNIQUE,
   `morada` varchar(45) NOT NULL,

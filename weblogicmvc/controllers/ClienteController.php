@@ -35,8 +35,8 @@ class ClienteController extends Controller
         $user->password = $this->gerarpass();
 
         if ($user->is_valid()){
-            $user->save();
             sendPassword($user->email, $user->nome, $user->password, $user->username);
+            $user->save();
 
             $this->redirectToRoute('cliente', 'index');
         } else {
@@ -67,8 +67,8 @@ class ClienteController extends Controller
     public function reporpass($id){
         $user = User::find($id);
         $user->password = $this->gerarpass();
-        $user->save();
         sendPassword($user->email, $user->nome, $user->password, $user->username);
+        $user->save();
         $this->redirectToRoute('cliente', 'index');
     }
 }
