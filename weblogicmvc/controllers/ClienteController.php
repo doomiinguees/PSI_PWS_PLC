@@ -19,13 +19,26 @@ class ClienteController extends Controller
         $user = User::find($id);
         if (is_null($user)){
 
-        } else {
-            $this->renderView('cliente', 'show', ['user'=>$user]);
+        } else {$auth = new Auth();
+            if ($auth->getRole() != 3){
+                $this->renderView('cliente', 'show', ['user'=>$user]);
+            }else{
+                $users = User::find_all_by_role('3');
+                $this->renderView('home', 'index', ['users'=>$users]);
+
+            }
         }
     }
 
     public function create(){
-        $this->renderView('cliente', 'create');
+        $auth = new Auth();
+        if ($auth->getRole() != 3){
+            $this->renderView('cliente', 'create');
+        }else{
+            $users = User::find_all_by_role('3');
+            $this->renderView('cliente', 'index', ['users'=>$users]);
+
+        }
     }
 
     public function store(){

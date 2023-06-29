@@ -16,12 +16,17 @@ class EmpresaController extends Controller
 
     public function edit(){
         $id = 1;
+        $auth = new Auth();
         $empresa = Empresa::Find($id);
         if (is_null($empresa)) {
             //TODO redirect to standard error page
         } else {
-            $this->renderView('empresa', 'edit', ['empresa'=>$empresa]);
-            //mostrar a vista edit passando os dados por parâmetro
+            if ($auth->getRole() != 3){
+                $this->renderView('empresa', 'edit', ['empresa'=>$empresa]);
+            }else{
+
+                $this->renderView('empresa', 'index', ['empresa'=>$empresa]);
+            }
         }
     }
 

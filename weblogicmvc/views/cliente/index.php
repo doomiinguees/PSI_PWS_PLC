@@ -37,7 +37,14 @@
                             </tbody>
                         </table>
                         <br>
+                        <?php
+                            $auth = new Auth();
+                            if ($auth->getRole() != 3){
+                        ?>
                         <a href="index.php?c=cliente&a=create" class="btn btn-info" role="button">Criar Cliente</a>
+                        <?php
+                            }
+                        ?>
                     </div>
                 </div>
             </div>
