@@ -29,8 +29,15 @@
                                     <td><?=$user->morada.'<br>'.$user->localidade.'<br>'.$user->codpostal?></td>
                                     <td>
                                         <a href="index.php?c=funcionario&a=show&id=<?=$user->id?>" class="btn btn-info" role="button">Ver detalhes</a>
+                                        <?php
+                                            $auth = new Auth();
+                                            if ($auth->getRole() == 1){
+                                        ?>
                                         <a href="index.php?c=funcionario&a=edit&id=<?=$user->id?>" class="btn btn-info" role="button">Editar</a>
                                         <a href="index.php?c=funcionario&a=reporpass&id=<?=$user->id?>" class="btn btn-info" role="button">Repor palavra-passe</a>
+                                        <?php
+                                            }
+                                        ?>
                                         <!-- Repor password?-->
                                     </td>
                                 </tr>
@@ -38,7 +45,14 @@
                             </tbody>
                         </table>
                         <br>
+                        <?php
+                            $auth = new Auth();
+                            if ($auth->getRole() == 1){
+                        ?>
                         <a href="index.php?c=funcionario&a=create" class="btn btn-info" role="button">Criar Funcionário</a>
+                        <?php
+                            }
+                        ?>
                     </div>
                 </div>
             </div>

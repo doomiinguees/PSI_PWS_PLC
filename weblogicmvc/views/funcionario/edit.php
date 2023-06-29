@@ -25,6 +25,10 @@
                 <label for="exampleInputEmail1">Telefone</label>
                 <input type="text" class="form-control" name="telefone" value="<?php if(isset($user)) { echo $user->telefone; } ?>">
                 <br>
+                <?php
+                    $auth = new Auth();
+                    if ($user->role == 1){
+                ?>
                 <label for="exampleInputEmail1">Função</label>
                 <select class="form-control select2 select2-hidden-accessible" name="role">
                     <option value="1">Administrador</option>
@@ -32,7 +36,7 @@
                 </select>
                 <br>
                 <?php
-                    $auth = new Auth();
+                    }
                     if ($user->id == $auth->getId()){
                 ?>
                 <label for="exampleInputEmail1">Palavra-Passe</label>

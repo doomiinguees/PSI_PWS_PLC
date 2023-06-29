@@ -48,7 +48,7 @@
                         <div class="col-sm-4 invoice-col">
                             <b>Invoice # <?= $folha->id ?></b><br>
                             <br>
-                            <a href="index.php?c=folhaobra&a=emitir&id=<?=$folha->id ?>" style="float: left;" class="btn btn-info" role="button">Emitir</a>
+                            <a href="index.php?c=folhaobra&a=emitir&id=<?=$folha->id ?>" style="float: left;" class="btn btn-success" role="button">Emitir</a>
                             <br><br>
                             <a href="index.php?c=folhaobra&a=index" style="float: left;" class="btn btn-info" role="button">Ir para index de folhas de obra</a>
                             <b><!--mais dados--></b>
@@ -85,11 +85,12 @@
                         <tr style="color: white">
                             <td><?= '['. $linha->service->referencia. ']  ' .$linha->service->nome?></td>
                             <td><?= $linha->quantidade ?></td>
+                            <td><?= $linha->service->precohora ?></td>
                             <td><?= $linha->valor ?></td>
                             <td><?= $linha->valiva ?></td>
                             <td>
                                 <a href="index.php?c=linhaobra&a=edit&id=<?=$linha->id ?>" class="btn btn-info" role="button">Editar</a>
-                                <a href="index.php?c=linhaobra&a=delete&id=<?=$linha->id ?>" class="btn btn-warning" role="button">Apagar</a>
+                                <a href="index.php?c=linhaobra&a=delete&id=<?=$linha->id ?>" class="btn btn-danger" role="button">Apagar</a>
                             </td>
                         </tr>
                         <?php
